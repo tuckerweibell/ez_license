@@ -1,6 +1,9 @@
 # EZ LICENSE
 
-### Summary
+### NOTE 
+This application is a plain old bash and ruby script combination. It will not handle every scenerio you are likely to encounter. However, the principles found in the scripts that utilize ```gem``` , ```npm```, and ```yarn``` in order to grab license information can be applied in various ways. Feel free to clone the repo and make improvements as you wish or customize the code to serve applicable functions for your use case.
+
+## Summary
 Used for generating a CSV file of licenses discovered in NPM, YARN, and BUNDLER packages if available. This code currently only runs on Alpine and Debian 
 based operating systems but can easily be modified to accomidate more. 
 
@@ -51,11 +54,5 @@ Enter app name (anything you want): myapp
 ### Docker Tips
 - Run with user root ```-u="root"``` when you run the docker image
 - Create a results directory on the host machine and map it with a volume to the container ```-v $PWD:/usr/src/app/results```
-
-
-## NOTE 
-This application is a plain old bash and ruby script combination. It will not handle every scenerio you are likely to encounter. However, the principles found in the 
-scripts that utilize ```gem``` , ```npm```, and ```yarn``` in order to grab license information can be applied in various ways. Feel free to clone the repo and make improvements
-as you wish or customize the code to serve applicable functions for your use case.
 
 
