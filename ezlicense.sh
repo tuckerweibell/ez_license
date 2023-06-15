@@ -44,5 +44,7 @@ printf '\n'
 echo "License File:"
 echo "_______________________"
 cat config/application.rb | grep 'SERVICE_NAME = ' | cut -d '"' -f2 | xargs -t -I {} bash -c 'echo {}_licenses.csv && mv licenses.csv {}_licenses.csv'
+mkdir results
+cp *_licenses.csv results/
 printf '\n'
 echo "Status: Complete!"
