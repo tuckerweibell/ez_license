@@ -3,12 +3,14 @@
 
 check_pkg_managers() {
     
-    if [ `yarn -v &>/dev/null` ]; then YARN="y" && echo "Yarn detected."; else YARN="n"; fi
 
-    if [ `npm -v &>/dev/null` ]; then NPM="y" && echo "Npm detected."; else NPM="n"; fi
+    yarn -v &>/dev/null; if [ $? == 0 ]; then YARN="y" && echo "Yarn detected."; else YARN="n"; fi
 
-    if [ `gem -v &>/dev/null` ]; then GEM="y" && echo "Gems detected."; else GEM="n"; fi
+    npm -v &>/dev/null; if [ $? == 0 ]; then NPM="y" && echo "Npm detected."; else NPM="n"; fi
 
-    if [ `pip -v &>/dev/null` ] || [ `poetry -v &>/dev/null` ]; then PIP="y" && echo "Pip/Poetry detected."; else PIP="n"; fi
+    gem -v &>/dev/null; if [ $? == 0 ]; then GEM="y" && echo "Gems detected."; else GEM="n"; fi
 
+    pip -v &>/dev/null; if [ $? == 0 ]; then PIP="y" && echo "Pip detected."; else PIP="n"; fi
+
+    poetry -v &>/dev/null; if [ $? == 0 ]; then PIP="y" && echo "Poetry detected."; else PIP="n"; fi
 }
