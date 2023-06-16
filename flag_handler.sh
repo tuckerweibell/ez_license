@@ -19,6 +19,9 @@ while getopts ":n:o:" opt; do
             OS_VAR=${OPTARG}
             if ! ([ $OS_VAR == "debian" ] || [ $OS_VAR == "alpine" ]); then exit_abnormal; fi
             ;;
+        ?)
+            exit_abnormal
+            ;;
         :)
             exit_abnormal
     esac
