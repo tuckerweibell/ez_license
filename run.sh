@@ -1,14 +1,7 @@
 #!/bin/bash
 
 # Include required scripts
-. 'flag_handler.sh'
-. 'spinner.sh'
-. 'os_handler.sh'
-. 'welcome_banner.sh'
-. 'app_handler.sh'
-. 'gem_handler.sh'
-. 'yarn_handler.sh'
-. 'npm_handler.sh'
+. 'scripts.sh'
 
 # Display welcome message
 welcome
@@ -40,20 +33,11 @@ stop_spinner 0
 printf '\n'
 echo "Processed npm package dependencies."
 
-
-printf '\n'
-echo "Consolidating and removing duplicates..."
-printf '\n'
+# Run Ruby script to generate CSV file
+printf '\n'; echo "Consolidating and removing duplicates..."; printf '\n'
 ruby ezhelper.rb
-echo "Success"
-printf '\n'
-printf '\n'
-echo "License File:"
-echo "_______________________"
-printf '\n'
-file_ext="_license.csv"
-mv licenses.csv $APP_NAME$file_ext
-echo $APP_NAME$file_ext
-cp $APP_NAME$file_ext results
-printf '\n'
-echo "Status: Complete!"
+echo "Success!"
+printf '\n\n'
+ 
+# Generate output message
+output_msg
