@@ -10,7 +10,7 @@ handle_os_input () {
     elif [ $os_var == 2 ]; then
         if handle_debian; then success_msg; else handle_fail; fi
     else
-        echo "ERROR: Please select 1 or 2."; printf '\n'; exit
+        printf '\n'; echo "EXITING: Run again a select 1 or 2."; printf '\n'; exit
     fi
 
     printf '\n'
