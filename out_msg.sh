@@ -7,7 +7,6 @@ echo '
 License File:
 _______________________
 '
-    printf '\n'
     EXT="_license.csv"
     mv licenses.csv $APP_NAME$EXT
 

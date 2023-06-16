@@ -67,6 +67,24 @@ if File.exists?('ez_license/dependencies/gem_deps.json')
 	end
 end
 
+if File.exists?('ez_license/dependencies/python_deps.json')
+	file_4 = File.read('ez_license/dependencies/python_deps.json')
+	hash_4 = JSON.parse(file_4)
+	unless hash_4.empty?
+		hash_4.each do |x|
+			name = x["Name"]
+			version = x["Version"]
+			license = x["License"]
+			license = license.sub("MIT*", "MIT")
+			url = x["URL"]
+			url = url.sub("git@", "https://").sub(".com:", ".com/")
+			url = url.sub(".git", "").sub("git://", "https://").sub("git+", "")
+			temp = {"name" => name, "version" => version, "license" => license, "url" => url, "package_manager" => "pip or poetry"}
+			licenses << temp
+		end
+	end
+end
+
 licenses = licenses.to_a
 headers = ["Name", "Version", "License", "Url", "Package_Manager"]
 CSV.open("licenses.csv", "w") do |csv|
