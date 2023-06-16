@@ -40,7 +40,7 @@ echo "Processed npm package dependencies."
 printf '\n'; echo "Consolidating and removing duplicates..."; printf '\n'
 ruby ez_license/parser.rb
 echo "Success!"
-printf '\n\n'
+printf '\n'
  
 # Generate output message
 output_msg
