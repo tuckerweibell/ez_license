@@ -47,6 +47,9 @@ printf '\n'; echo "Consolidating and removing duplicates..."; printf '\n'
 ruby ez_license/parser.rb
 echo "Success!"
 printf '\n'
- 
+
+# Clean up
+clean
+
 # Generate output message
 output_msg

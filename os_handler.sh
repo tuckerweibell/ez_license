@@ -40,13 +40,13 @@ handle_os_input () {
 }
 
 handle_alpine () {
-
+    set_install
     apk update && apk add jq ruby pip #npm yarn pip
 
 }
 
 handle_debian () {
-
+    set_install
     apt-get update -y && apt install jq ruby pip -y #npm yarn pip
 
 }
@@ -61,4 +61,38 @@ handle_fail () {
 
     printf '\n'; echo "Packages failed to install. Please manually install npm, jq, and yarn or try different operating system."; exit
 
+}
+
+set_install () {
+        jq --version &>/dev/null; if [ $? == 0 ]; then JQ_INSTALLED="y" && echo "Yarn detected."; else JQ_INSTALLED="n"; fi
+        ruby --version &>/dev/null; if [ $? == 0 ]; then RUBY_INSTALLED="y" && echo "Yarn detected."; else RUBY_INSTALLED="n"; fi
+        pip --version -v &>/dev/null; if [ $? == 0 ]; then PIP_INSTALLED="y" && echo "Yarn detected."; else PIP_INSTALLED="n"; fi
+}
+
+clean () {
+    if [ $OS_VAR == 1 ] || [ $OS_VAR == "alpine" ]; then
+        if [ $JQ_INSTALLED == "y" ]; then
+            apk delete jq
+        fi
+        if [ $RUBY_INSTALLED == "y" ]; then
+            apk delete ruby
+        fi
+        if [ $PIP_INSTALLED == "y" ]; then
+            apk delete pip
+        fi
+
+        return 1
+    fi
+
+    if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
+        if [ $JQ_INSTALLED == "y" ]; then
+            apt remove jq
+        fi
+        if [ $RUBY_INSTALLED == "y" ]; then
+            apt remove ruby
+        fi
+        if [ $PIP_INSTALLED == "y" ]; then
+            apt remove pip
+        fi
+    fi
 }
