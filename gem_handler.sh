@@ -2,8 +2,7 @@
 
 handle_gem_deps () {
 
-    echo $GEM
-    echo $GEM
+    if [ $GEM == "n" ]; then return 0; fi
 
     if gem_installed; then
         echo "{\"dependencies\": [" > ez_license/dependencies/gem_deps.json && gem list | \
