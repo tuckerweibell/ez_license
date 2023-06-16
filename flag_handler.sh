@@ -20,7 +20,7 @@ while getopts "n:o:" opt; do
             if ! ([ $OS_VAR == "debian" ] || [ $OS_VAR == "alpine" ]); then exit_abnormal; fi
             ;;
         ?)
-            printf '\n'; echo "Error: Invalid option was specified -$OPTARG"; printf '\n'; exit_abnormal
+            exit_abnormal
             ;;
         :)
             exit_abnormal
