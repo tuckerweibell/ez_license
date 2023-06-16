@@ -35,7 +35,7 @@ echo "Processed npm package dependencies."
 
 # Run Ruby script to generate CSV file
 printf '\n'; echo "Consolidating and removing duplicates..."; printf '\n'
-ruby ezhelper.rb
+ruby ez_license/ezhelper.rb
 echo "Success!"
 printf '\n\n'
  
