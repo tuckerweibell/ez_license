@@ -18,7 +18,7 @@ output_msg () {
         printf '\n'; echo "No output directory specified. $APP_NAME$EXT added to current directory."
     else
         mv $APP_NAME$EXT $OUTPUT_DIR
-        printf '\n'; echo "$APP_NAME$EXT added to /$OUTPUT_DIR"
+        printf '\n'; echo "$APP_NAME$EXT added to $PWD/$OUTPUT_DIR"
     fi
 
     printf '\n'; echo "Complete!";
@@ -26,9 +26,9 @@ output_msg () {
     printf '\n\n'
     echo '
                                 Come again!        
-               --------------------------------------------
-                Rest assured, it will be "udderly" boring. 
-               --------------------------------------------
+               -----------------------------------------------
+               Rest assured, it will be an "udderly" good time. 
+               -----------------------------------------------
                                   \   ^__^            
                                    \  (@@)\_______    
                                       (__)\       )\/\
