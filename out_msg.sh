@@ -16,7 +16,7 @@ _______________________
         echo "No output directory specified. $APP_NAME$EXT added to current directory."
     else
         # Check if output dir already exists and create if not
-        ls $OUTPUT_DIR 2>&1; if ! [ $? == 0 ]; then mkdir $OUTPUT_DIR; fi
+        ls $OUTPUT_DIR &>/dev/null; if ! [ $? == 0 ]; then mkdir $OUTPUT_DIR; fi
         mv $APP_NAME$EXT $OUTPUT_DIR
         echo "$APP_NAME$EXT added to $PWD/$OUTPUT_DIR"
     fi
