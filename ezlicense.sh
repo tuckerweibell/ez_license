@@ -5,7 +5,7 @@
 . 'welcome_banner.sh'
 
 welcome
-handle_os_input
+auto_detect_os
 
 read -p 'Enter app name (anything you want): ' app_name
 printf '\n'
