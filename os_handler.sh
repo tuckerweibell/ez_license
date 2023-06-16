@@ -64,9 +64,9 @@ handle_fail () {
 }
 
 set_install () {
-        jq --version &>/dev/null; if [ $? == 0 ]; then JQ_INSTALLED="y" && echo "jq will be installed."; else JQ_INSTALLED="n"; fi
-        ruby --version &>/dev/null; if [ $? == 0 ]; then RUBY_INSTALLED="y" && echo "ruby will be installed."; else RUBY_INSTALLED="n"; fi
-        pip --version -v &>/dev/null; if [ $? == 0 ]; then PIP_INSTALLED="y" && echo "pip will be installed."; else PIP_INSTALLED="n"; fi
+        jq --version &>/dev/null; if [ $? =! 0 ]; then JQ_INSTALLED="y" && echo "jq will be installed."; else JQ_INSTALLED="n"; fi
+        ruby --version &>/dev/null; if [ $? =! 0 ]; then RUBY_INSTALLED="y" && echo "ruby will be installed."; else RUBY_INSTALLED="n"; fi
+        pip --version -v &>/dev/null; if [ $? =! 0 ]; then PIP_INSTALLED="y" && echo "pip will be installed."; else PIP_INSTALLED="n"; fi
 }
 
 clean () {
