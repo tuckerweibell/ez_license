@@ -2,12 +2,14 @@
 
 
 auto_detect_os () {
-    os_var=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`
+    if [ -z $OS_VAR ]; then
+        OS_VAR=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`
+    fi
 
-    if [ $os_var == "alpine" ]; then 
+    if [ $OS_VAR == "alpine" ]; then 
         echo "Detected alpine operating system."; printf '\n'
         if handle_alpine; then success_msg; else handle_fail; fi
-    elif [ $os_var == "debian" ]; then
+    elif [ $OS_VAR == "debian" ]; then
         echo "Detected debian operating system."; printf '\n'
         if handle_debian; then success_msg; else handle_fail; fi
     else 
@@ -20,11 +22,11 @@ auto_detect_os () {
 handle_os_input () {
 
     printf '\n'; echo 'Please select OS:'; echo '----------------'; printf '\n' 
-    echo '1) alpine' ; echo '2) debian'; printf '\n'; read -p 'Enter: ' os_var
+    echo '1) alpine' ; echo '2) debian'; printf '\n'; read -p 'Enter: ' OS_VAR
 
-    if [ $os_var == 1 ]; then
+    if [ $OS_VAR == 1 ]; then
         if handle_alpine; then success_msg; else handle_fail; fi
-    elif [ $os_var == 2 ]; then
+    elif [ $OS_VAR == 2 ]; then
         if handle_debian; then success_msg; else handle_fail; fi
     else
         printf '\n'; echo "EXITING: Run again and select 1 or 2."; printf '\n'; exit
