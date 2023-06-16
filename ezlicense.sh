@@ -4,8 +4,8 @@
 . 'spinner.sh'
 . 'os_handler.sh'
 . 'welcome_banner.sh'
-. 'gem_handler.sh'
 . 'app_handler.sh'
+. 'gem_handler.sh'
 
 # Display welcome message
 welcome
@@ -18,7 +18,7 @@ handle_app_name
 
 # Handle Gem Dependencies
 start_spinner "Processing gem dependencies..."
-gem_handler
+handle_gem_deps
 stop_spinner 0
 printf '\n'
 echo "Processed gem dependencies"
