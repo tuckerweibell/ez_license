@@ -86,13 +86,13 @@ clean () {
 
     if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
         if [ $JQ_INSTALLED == "y" ]; then
-            apt remove jq
+            apt remove jq -y
         fi
         if [ $RUBY_INSTALLED == "y" ]; then
-            apt remove ruby
+            apt remove ruby -y
         fi
         if [ $PIP_INSTALLED == "y" ]; then
-            apt remove pip
+            apt remove pip -y
         fi
     fi
 }
