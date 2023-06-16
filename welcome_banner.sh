@@ -21,8 +21,8 @@ welcome () {
     echo "                                  \   ^__^            "
     echo '                                   \  (@@)\_______    '
     echo '                                      (__)\       )\/\'
-    echo '                                        U  ||----w||  '
-    echo '                                           ||     ||  '
+    echo '                                        U ||----w||  '
+    echo '                                          ||     ||  '
     printf '\n'
 
 }
