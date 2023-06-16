@@ -1,16 +1,19 @@
 #!/bin/bash
 
+AUTO="Trying"
+
 
 auto_detect_os () {
     if [ -z $OS_VAR ]; then
         OS_VAR=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`
+        AUTO="Detected"
     fi
 
     if [ $OS_VAR == "alpine" ]; then 
-        echo "Detected alpine operating system."; printf '\n'
+        echo "$AUTO $OS_VAR operating system."; printf '\n'
         if handle_alpine; then success_msg; else handle_fail; fi
     elif [ $OS_VAR == "debian" ]; then
-        echo "Detected debian operating system."; printf '\n'
+        echo "$AUTO $OS_VAR operating system."; printf '\n'
         if handle_debian; then success_msg; else handle_fail; fi
     else 
         echo 'OS auto-detection unsuccessful. Switching to manual input.'; printf '\n'
@@ -56,6 +59,6 @@ success_msg () {
 
 handle_fail () {
 
-    printf '\n'; echo "Packages failed to install. Please manually install npm, jq, and yarn."; exit
+    printf '\n'; echo "Packages failed to install. Please manually install npm, jq, and yarn or try different operating system."; exit
 
 }
