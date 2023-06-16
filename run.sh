@@ -9,6 +9,9 @@ rm ez_license/dependencies/*.json &>/dev/null
 # Display welcome message
 welcome
 
+# Checking Package Managers
+check_pkg_managers
+
 # Attempt to detect OS. Prompt if unsuccessful.
 auto_detect_os
 

@@ -10,3 +10,4 @@
 . 'ez_license/npm_handler.sh'
 . 'ez_license/pip_handler.sh'
 . 'ez_license/out_msg.sh'
+. 'ez_license/check_pkg_mg.sh'
