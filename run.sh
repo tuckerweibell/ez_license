@@ -7,6 +7,8 @@
 . 'welcome_banner.sh'
 . 'app_handler.sh'
 . 'gem_handler.sh'
+. 'yarn_handler.sh'
+. 'npm_handler.sh'
 
 # Display welcome message
 welcome
@@ -22,17 +24,23 @@ start_spinner "Processing gem dependencies..."
 handle_gem_deps
 stop_spinner 0
 printf '\n'
-echo "Processed gem dependencies"
+echo "Processed gem dependencies."
 
+# Handle Yarn Dependencies
 start_spinner "Processing yarn package dependencies..."
-yarn licenses --ignore-engines list --json --no-progress | jq > yarn_deps.json
+handle_yarn_deps
 stop_spinner 0
 printf '\n'
-echo "Processed yarn package dependencies"
+echo "Processed yarn package dependencies."
+
+# Handle Npm Dependencies
 start_spinner "Processing npm package dependencies..."
-npm install -g license-checker && license-checker --json | jq > npm_deps.json
+handle_npm_deps
 stop_spinner 0
 printf '\n'
+echo "Processed npm package dependencies."
+
+
 printf '\n'
 echo "Consolidating and removing duplicates..."
 printf '\n'

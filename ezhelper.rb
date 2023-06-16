@@ -3,6 +3,7 @@ require 'set'
 require 'csv'
 
 licenses = Set.new
+
 file_1 = File.read('npm_deps.json')
 hash_1 = JSON.parse(file_1)
 hash_1.each_pair do |k, d|
@@ -52,18 +53,6 @@ hash_3.each do |x|
 	temp = {"name" => name, "version" => version, "license" => license, "url" => url, "package_manager" => "bundler"}
 	licenses << temp
 end
-
-#file_4 = File.read('gem_transitive_deps.json')
-#hash_4 = JSON.parse(file_4)
-#hash_4 = hash_4["dependencies"]
-#hash_4.each do |x|
-#        name = x["name"]
-#        version = x["version"]
-#        license = x["license"]
-#        url = x["homepage_url"]
-#        temp = {"name" => name, "version" => version, "license" => license, "url" => url, , "package_manager" => "bundler"}
-#        licenses << temp
-#end
 
 licenses = licenses.to_a
 headers = ["Name", "Version", "License", "Url", "Package_Manager"]

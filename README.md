@@ -31,8 +31,8 @@ Clone the repository
 Copy files to app directory
 ```cp ez_license/* .```
 
-Add executable permissions to ezlicense.sh
-```chmod +x ezlicense.sh```
+Add executable permissions to run.sh
+```chmod +x run.sh```
 
 Ensure bash is installed
 ```apk add bash``` OR ```apt-get install bash```
@@ -41,7 +41,7 @@ Verify you are root or have sudo permissions
 ```sudo -l``` OR ```whoami```
 
 Execute the bash script
-```./ezlicense.sh```
+```./run.sh```
 
 Enter your OS type
 1) alpine
