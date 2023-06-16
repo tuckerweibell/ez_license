@@ -1,6 +1,6 @@
 #!/bin/bash
 
-handle_os_input() {
+handle_os_input () {
 
     echo 'Please select OS:'
     echo '----------------'
@@ -10,9 +10,9 @@ handle_os_input() {
     printf '\n'
     read -p 'Enter: ' os_var
     if [ $os_var == 1 ]; then
-        if handle_alpine; then success_msg; else handle_fail;
+        if handle_alpine; then success_msg; else handle_fail; fi
     elif [ $os_var == 2 ]; then
-        if handle_debian; then success_msg; else handle_fail;
+        if handle_debian; then success_msg; else handle_fail; fi
     else
         echo "Please select 1 or 2"; exit
     fi
