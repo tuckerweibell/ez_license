@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Include required scripts
-. 'flag_handler'
+. 'flag_handler.sh'
 . 'spinner.sh'
 . 'os_handler.sh'
 . 'welcome_banner.sh'
