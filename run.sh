@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Include required scripts
-. 'scripts.sh'
+. 'ez_license/scripts.sh'
 
 # Display welcome message
 welcome
