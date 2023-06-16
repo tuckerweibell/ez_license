@@ -14,7 +14,6 @@ while getopts ":n:o:" opt; do
     case $opt in
         n)
             APP_NAME=${OPTARG}
-    fi
             ;;
         o)
             OS_VAR=${OPTARG}
