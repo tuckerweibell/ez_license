@@ -49,7 +49,7 @@ echo "Success!"
 printf '\n'
 
 # Uninstall packages installed for this program to run
-clean
+clean_up
 
 # Generate output message
 output_msg

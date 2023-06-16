@@ -68,7 +68,7 @@ set_install () {
         ruby --version &>/dev/null; if [ $? -ne 0 ]; then RUBY_INSTALLED="y" && echo "ruby will be installed."; else RUBY_INSTALLED="n"; fi
 }
 
-clean () {
+clean_up () {
 
     if [ $OS_VAR == 1 ] || [ $OS_VAR == "alpine" ]; then
         if [ $JQ_INSTALLED == "y" ]; then apk delete jq; fi
