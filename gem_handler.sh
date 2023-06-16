@@ -15,7 +15,7 @@ handle_gem_deps () {
                                 echo "{\"name\":\"$name\",\"version\":\"$version\",\"license\":\"UNKOWN\",\"homepage_url\":\"$homepage\"}" | \
                                 jq && echo ,; else if ! [$name == ""]; then \
                                 echo "{\"name\":\"$name\",\"version\":\"$version\",\"license\":\"$license\",\"homepage_url\":\"$homepage\"}" | \
-                                jq && echo ,; fi; fi' 2>/dev/null >> gem_deps.json && sed -i '$ d' gem_deps.json && echo "]}" >> gem_deps.json
+                                jq && echo ,; fi; fi' 2>/dev/null >> gem_deps.json && sed -i '$ d' gem_deps.json && echo "]}" >> ez_license/dependencies/gem_deps.json
     else
         printf '\n'; echo "Skipping gem - not installed."
     fi
