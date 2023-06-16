@@ -9,6 +9,6 @@ check_pkg_managers() {
 
     if [ `gem -v &>/dev/null` ]; then GEM="y" && echo "Gems detected."; else GEM="n"; fi
 
-    if [ `pip -v &>/dev/null` || `poetry -v &>/dev/null` ]; then PIP="y" && echo "Pip/Poetry detected."; else PIP="n"; fi
+    if [ `pip -v &>/dev/null` ] || [ `poetry -v &>/dev/null` ]; then PIP="y" && echo "Pip/Poetry detected."; else PIP="n"; fi
 
 }
