@@ -15,7 +15,8 @@ welcome () {
           ----------------------------------------------------------------------------
         '
     printf '\n\n'
-    echo '                    Practical Advice        
+    echo '
+                            Practical Advice        
                     ----------------------------------
                      Ignore it all and click "I agree" 
                     ----------------------------------
