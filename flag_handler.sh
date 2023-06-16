@@ -10,7 +10,7 @@ exit_abnormal() {
   exit 1
 }
 
-while getopts ":n:o:" opt; do
+while getopts "n:o:" opt; do
     case $opt in
         n)
             APP_NAME=${OPTARG}
