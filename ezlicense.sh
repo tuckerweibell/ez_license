@@ -1,31 +1,7 @@
 #!/bin/bash
 
 . 'spinner.sh'
-printf '\n'
-echo "Installing required tools..."
-printf '\n'
-echo 'Please select OS:'
-echo '----------------'
-printf '\n' 
-echo '1) alpine' 
-echo '2) debian' 
-printf '\n'
-read -p 'Enter: ' os_var
-
-if [ $os_var == 1 ]; then
-	apk update
-	apk add jq
-	apk add npm
-	apk add yarn
-elif [ $os_var == 2 ]; then
-	apt-get update -y
-	apt install jq -y
-	apt install npm -y
-	apt install yarn -y
-else
-	 echo "Please select 1 or 2"; exit
-fi
-printf '\n'
+handle_os_input
 echo "__________________________________________________"
 echo "Rails License Scanner (Supports Bundle, Yarn, Npm)"
 echo "__________________________________________________"
