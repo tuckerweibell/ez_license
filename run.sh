@@ -48,7 +48,7 @@ ruby ez_license/parser.rb
 echo "Success!"
 printf '\n'
 
-# Clean up
+# Uninstall packages installed for this program to run
 clean
 
 # Generate output message

@@ -70,29 +70,18 @@ set_install () {
 }
 
 clean () {
+    
     if [ $OS_VAR == 1 ] || [ $OS_VAR == "alpine" ]; then
-        if [ $JQ_INSTALLED == "y" ]; then
-            apk delete jq
-        fi
-        if [ $RUBY_INSTALLED == "y" ]; then
-            apk delete ruby
-        fi
-        if [ $PIP_INSTALLED == "y" ]; then
-            apk delete pip
-        fi
-
+        if [ $JQ_INSTALLED == "y" ]; then apk delete jq; fi
+        if [ $RUBY_INSTALLED == "y" ]; then apk delete ruby; fi
+        if [ $PIP_INSTALLED == "y" ]; then apk delete pip; fi
         return 1
     fi
 
     if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
-        if [ $JQ_INSTALLED == "y" ]; then
-            apt remove jq -y
-        fi
-        if [ $RUBY_INSTALLED == "y" ]; then
-            apt remove ruby -y
-        fi
-        if [ $PIP_INSTALLED == "y" ]; then
-            apt remove pip -y
+        if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
+        if [ $RUBY_INSTALLED == "y" ]; then apt remove ruby -y; fi
+        if [ $PIP_INSTALLED == "y" ]; then apt remove pip -y; fi
         fi
     fi
 }
