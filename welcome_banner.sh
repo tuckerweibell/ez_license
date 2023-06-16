@@ -14,15 +14,15 @@ welcome () {
     echo "----------------------------------------------------------------------------"
     printf '\n'
     printf '\n'
-    echo "           Practical Advice        "
-    echo " ----------------------------------"
-    echo '< Ignore it all and click “I agree >'
-    echo " ----------------------------------"
-    echo "       \   ^__^"
-    echo '        \  (@@)\_______'
-    echo '           (__)\       )\/\'
-    echo '            U  ||----w||'
-    echo '               ||     ||'
+    echo "                              Practical Advice        "
+    echo "                    ----------------------------------"
+    echo '                  < Ignore it all and click “I agree >'
+    echo "                    ----------------------------------"
+    echo "                                  \   ^__^            "
+    echo '                                   \  (@@)\_______    '
+    echo '                                      (__)\       )\/\'
+    echo '                                        U  ||----w||  '
+    echo '                                           ||     ||  '
     printf '\n'
 
 }
