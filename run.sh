@@ -3,6 +3,9 @@
 # Include required scripts
 . 'ez_license/scripts.sh'
 
+# Remove old .json output if they exist
+rm ez_license/dependencies/*.json
+
 # Display welcome message
 welcome
 
