@@ -5,13 +5,13 @@ auto_detect_os () {
     os_var=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`
 
     if [ $os_var == "alpine" ]; then 
-        printf '\n'; echo "Detected alpine operating system."
+        echo "Detected alpine operating system."; printf '\n'
         if handle_alpine; then success_msg; else handle_fail; fi
     elif [ $os_var == "debian" ]; then
-        printf '\n'; echo "Detected debian operating system."
+        echo "Detected debian operating system."; printf '\n'
         if handle_debian; then success_msg; else handle_fail; fi
     else 
-        printf '\n'; echo 'OS auto-detection unsuccessful. Switching to manual input.'
+        echo 'OS auto-detection unsuccessful. Switching to manual input.'; printf '\n'
         handle_os_input
     fi
 }
