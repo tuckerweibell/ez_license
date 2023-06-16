@@ -81,6 +81,5 @@ clean_up () {
         if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
         if [ $RUBY_INSTALLED == "y" ]; then apt remove ruby -y; fi
         if [ $PIP_INSTALLED == "y" ]; then apt remove pip -y; fi
-        fi
     fi
 }
