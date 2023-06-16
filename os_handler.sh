@@ -41,13 +41,13 @@ handle_os_input () {
 
 handle_alpine () {
     set_install
-    apk update && apk add jq ruby pip #npm yarn pip
+    apk update && apk add jq ruby
 
 }
 
 handle_debian () {
     set_install
-    apt-get update -y && apt install jq ruby pip -y #npm yarn pip
+    apt-get update -y && apt install jq ruby -y
 
 }
 
@@ -66,11 +66,10 @@ handle_fail () {
 set_install () {
         jq --version &>/dev/null; if [ $? -ne 0 ]; then JQ_INSTALLED="y" && echo "jq will be installed."; else JQ_INSTALLED="n"; fi
         ruby --version &>/dev/null; if [ $? -ne 0 ]; then RUBY_INSTALLED="y" && echo "ruby will be installed."; else RUBY_INSTALLED="n"; fi
-        pip --version -v &>/dev/null; if [ $? -ne 0 ]; then PIP_INSTALLED="y" && echo "pip will be installed."; else PIP_INSTALLED="n"; fi
 }
 
 clean () {
-    
+
     if [ $OS_VAR == 1 ] || [ $OS_VAR == "alpine" ]; then
         if [ $JQ_INSTALLED == "y" ]; then apk delete jq; fi
         if [ $RUBY_INSTALLED == "y" ]; then apk delete ruby; fi
