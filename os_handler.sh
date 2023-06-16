@@ -47,7 +47,7 @@ handle_alpine () {
 
 handle_debian () {
 
-    apt-get update -y && apt install jq npm yarn pip -y
+    apt-get update -y && apt install jq npm yarn pip ruby -y
 
 }
 
