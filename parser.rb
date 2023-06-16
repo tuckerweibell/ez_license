@@ -75,7 +75,7 @@ if File.exists?('ez_license/dependencies/python_deps.json')
 			name = x["Name"]
 			version = x["Version"]
 			license = x["License"]
-			license = license.sub("MIT*", "MIT").sub("MIT License", "MIT").truncate(20)
+			license = license.sub("MIT*", "MIT").sub("MIT License", "MIT").slice(0, 20)
 			url = x["URL"]
 			url = url.sub("git@", "https://").sub(".com:", ".com/")
 			url = url.sub(".git", "").sub("git://", "https://").sub("git+", "")
