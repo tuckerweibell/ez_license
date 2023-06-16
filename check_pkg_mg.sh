@@ -11,7 +11,7 @@ check_pkg_managers() {
 
     pip -v &>/dev/null; if [ $? == 0 ] && [ "$PIP" != "y" ]; then PIP="y" && echo "Pip detected."; else PIP="n"; fi
 
-    poetry -v &>/dev/null; if [ $? == 0 ] && [ "$PIP" != "y" ]; then PIP="y" && echo "Poetry detected."; else PIP="n"; fi
+    poetry -v &>/dev/null; if [ $? == 0 ] && [ "$POETRY" != "y" ]; then POETRY="y" && echo "Poetry detected."; else POETRY="n"; fi
 
     printf '\n'
 }

@@ -41,13 +41,13 @@ handle_os_input () {
 
 handle_alpine () {
 
-    apk update && apk add jq ruby #npm yarn pip
+    apk update && apk add jq ruby pip #npm yarn pip
 
 }
 
 handle_debian () {
 
-    apt-get update -y && apt install jq ruby -y #npm yarn pip
+    apt-get update -y && apt install jq ruby pip -y #npm yarn pip
 
 }
 

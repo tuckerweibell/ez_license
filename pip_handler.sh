@@ -2,7 +2,7 @@
 
 handle_pip_deps () {
 
-    if [ $PIP == "n" ]; then return 0; fi
+    if [ $PIP == "n" ] && [ $POETRY == "n" ]; then return 0; fi
 
     if pip_installed; then
         pip install -U pip-licenses
