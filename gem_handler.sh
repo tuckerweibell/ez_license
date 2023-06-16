@@ -2,6 +2,9 @@
 
 handle_gem_deps () {
 
+    echo $GEM
+    echo $GEM
+
     if gem_installed; then
         echo "{\"dependencies\": [" > ez_license/dependencies/gem_deps.json && gem list | \
         cut -d " " -f1 | \
