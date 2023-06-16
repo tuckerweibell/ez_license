@@ -1,7 +1,10 @@
 #!/bin/bash
 
 . 'spinner.sh'
+. 'os_handler.sh'
+
 handle_os_input
+
 echo "__________________________________________________"
 echo "Rails License Scanner (Supports Bundle, Yarn, Npm)"
 echo "__________________________________________________"
