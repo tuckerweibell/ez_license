@@ -4,7 +4,7 @@ require 'csv'
 
 licenses = Set.new
 
-if File.exists?('ez_license/dependencies/npm_deps.json')
+if File.exist?('ez_license/dependencies/npm_deps.json')
 	file_1 = File.read('ez_license/dependencies/npm_deps.json')
 	hash_1 = JSON.parse(file_1)
 	unless hash_1.empty?
@@ -28,7 +28,7 @@ if File.exists?('ez_license/dependencies/npm_deps.json')
 	end
 end
 
-if File.exists?('ez_license/dependencies/yarn_deps.json')
+if File.exist?('ez_license/dependencies/yarn_deps.json')
 	file_2 = File.read('ez_license/dependencies/yarn_deps.json')
 	hash_2 = JSON.parse(file_2)
 	hash_2 = hash_2["data"]["body"]
@@ -48,7 +48,7 @@ if File.exists?('ez_license/dependencies/yarn_deps.json')
 
 end
 
-if File.exists?('ez_license/dependencies/gem_deps.json')
+if File.exist?('ez_license/dependencies/gem_deps.json')
 	file_3 = File.read('ez_license/dependencies/gem_deps.json')
 	hash_3 = JSON.parse(file_3)
 	hash_3 = hash_3["dependencies"]
@@ -67,7 +67,7 @@ if File.exists?('ez_license/dependencies/gem_deps.json')
 	end
 end
 
-if File.exists?('ez_license/dependencies/python_deps.json')
+if File.exist?('ez_license/dependencies/python_deps.json')
 	file_4 = File.read('ez_license/dependencies/python_deps.json')
 	hash_4 = JSON.parse(file_4)
 	unless hash_4.empty?
