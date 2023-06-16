@@ -14,5 +14,5 @@ check_pkg_managers() {
 
     poetry -v &>/dev/null; if [ $? == 0 ]; then PIP="y" && echo "Poetry detected."; else PIP="n"; fi
 
-    print '\n'
+    printf '\n'
 }

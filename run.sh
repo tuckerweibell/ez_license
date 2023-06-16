@@ -23,28 +23,24 @@ start_spinner "Processing gem dependencies..."
 handle_gem_deps
 stop_spinner 0
 printf '\n'
-echo "Processed gem dependencies."
 
 # Handle Yarn Dependencies
 start_spinner "Processing yarn package dependencies..."
 handle_yarn_deps
 stop_spinner 0
 printf '\n'
-echo "Processed yarn package dependencies."
 
 # Handle Npm Dependencies
 start_spinner "Processing npm package dependencies..."
 handle_npm_deps
 stop_spinner 0
 printf '\n'
-echo "Processed npm package dependencies."
 
 # Handle Pip / Poetry Dependencies
 start_spinner "Processing pip / poetry package dependencies..."
 handle_pip_deps
 stop_spinner 0
 printf '\n'
-echo "Processed pip / poetry package dependencies."
 
 # Run Ruby script to generate CSV file
 printf '\n'; echo "Consolidating and removing duplicates..."; printf '\n'

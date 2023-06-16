@@ -18,6 +18,7 @@ handle_gem_deps () {
                                 jq && echo ,; else if ! [$name == ""]; then \
                                 echo "{\"name\":\"$name\",\"version\":\"$version\",\"license\":\"$license\",\"homepage_url\":\"$homepage\"}" | \
                                 jq && echo ,; fi; fi' 2>/dev/null >> ez_license/dependencies/gem_deps.json && sed -i '$ d' ez_license/dependencies/gem_deps.json && echo "]}" >> ez_license/dependencies/gem_deps.json
+        echo "Processed gem packages."
     else
         printf '\n'; echo "Skipping gem - not installed."
     fi
