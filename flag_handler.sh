@@ -13,9 +13,11 @@ exit_abnormal() {
 while getopts ":n:o:" opt; do
     case $opt in
         n)
-            APP_NAME= ${OPTARG};;
+            APP_NAME=${OPTARG}
+            ;;
         o)
-            OS_VAR= ${OPTARG};;
+            OS_VAR=${OPTARG}
+            ;;
         :)
             exit_abnormal
     esac
