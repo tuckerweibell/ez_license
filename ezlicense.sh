@@ -2,19 +2,11 @@
 
 . 'spinner.sh'
 . 'os_handler.sh'
+. 'welcome_banner.sh'
 
 handle_os_input
+welcome
 
-echo "__________________________________________________"
-echo "Rails License Scanner (Supports Bundle, Yarn, Npm)"
-echo "__________________________________________________"
-echo '< Ignore it all and click “I agree >'
-echo " ----------------------------------"
-echo "       \   ^__^"
-echo '        \  (@@)\_______'
-echo '           (__)\       )\/\'
-echo '            U  ||----w||'
-echo '               ||     ||'
 read -p 'Enter app name (anything you want): ' app_name
 printf '\n'
 start_spinner "Processing gem dependencies..."
