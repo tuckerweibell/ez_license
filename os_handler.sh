@@ -85,11 +85,12 @@ clean_up () {
         if [ $NPM_INSTALLED == "y" ]; then apk del npm; fi
         if [ $YARN_INSTALLED == "y" ]; then apk del yarn; fi
         return 1
-    fia
+    fi
 
     if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
         if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
         if [ $RUBY_INSTALLED == "y" ]; then apt remove ruby -y; fi
         if [ $NPM_INSTALLED == "y" ]; then apt remove npm -y; fi
         if [ $YARN_INSTALLED == "y" ]; then apk remove yarn -y; fi
+    fi
 }
