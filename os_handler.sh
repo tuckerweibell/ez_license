@@ -77,11 +77,11 @@ check_lock () {
 clean_up () {
 
     if [ $OS_VAR == 1 ] || [ $OS_VAR == "alpine" ]; then
-        if [ $JQ_INSTALLED == "y" ]; then apk delete jq; fi
-        if [ $RUBY_INSTALLED == "y" ]; then apk delete ruby; fi
-        if [ $NPM_INSTALLED == "y" ]; then apk delete npm; fi
+        if [ $JQ_INSTALLED == "y" ]; then apk del jq; fi
+        if [ $RUBY_INSTALLED == "y" ]; then apk del ruby; fi
+        if [ $NPM_INSTALLED == "y" ]; then apk del npm; fi
         return 1
-    fi
+    fia
 
     if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
         if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
