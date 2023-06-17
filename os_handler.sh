@@ -44,6 +44,7 @@ handle_alpine () {
     apk update && apk add jq ruby
     check_lock
     if [ $NPM_INSTALL == "y" ]; then apk add npm; NPM_INSTALLED="y"; else NPM_INSTALLED="n"; fi
+    if [ $YARN_INSTALL == "y" ]; then apk add yarn; YARN_INSTALLED="y"; else YARN_INSTALLED="n"; fi
 }
 
 handle_debian () {
@@ -51,6 +52,7 @@ handle_debian () {
     apt-get update -y && apt install jq ruby -y
     check_lock
     if [ $NPM_INSTALL == "y" ]; then apt install npm -y; NPM_INSTALLED="y"; else NPM_INSTALLED="n"; fi
+    if [ $NPM_INSTALL == "y" ]; then apt install yarn -y; NPM_INSTALLED="y"; else NPM_INSTALLED="n"; fi
 }
 
 success_msg () {
@@ -72,6 +74,7 @@ set_install () {
 
 check_lock () {
     ls 'package-lock.json' &>/dev/null; if [ $? -eq 0 ]; then NPM_INSTALL="y" && echo "npm will be installed."; else NPM_INSTALL="n"; fi
+    ls 'yarn.lock' &>/dev/null; if [ $? -eq 0 ]; then YARN_INSTALL="y" && echo "yarn will be installed."; else YARN_INSTALL="n"; fi
 }
 
 clean_up () {
@@ -80,12 +83,14 @@ clean_up () {
         if [ $JQ_INSTALLED == "y" ]; then apk del jq; fi
         if [ $RUBY_INSTALLED == "y" ]; then apk del ruby; fi
         if [ $NPM_INSTALLED == "y" ]; then apk del npm; fi
+        if [ $YARN_INSTALLED == "y" ]; then apk del yarn; fi
         return 1
     fia
 
     if [ $OS_VAR == 2 ] || [ $OS_VAR == "debian" ]; then
         if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
         if [ $RUBY_INSTALLED == "y" ]; then apt remove ruby -y; fi
-        if [ $NPM_INSTALLED == "y" ]; then apt delete npm -y; fi
+        if [ $NPM_INSTALLED == "y" ]; then apt remove npm -y; fi
+        if [ $YARN_INSTALLED == "y" ]; then apk remove yarn -y; fi
     fi
 }
