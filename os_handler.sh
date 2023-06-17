@@ -4,6 +4,12 @@ AUTO="Trying"
 
 
 auto_detect_os () {
+    
+    YARN_INSTALLED="n"
+    NPM_INSTALLED="n"
+    RUBY_INSTALLED="n"
+    JQ_INSTALLED="n"
+
     if [ -z $OS_VAR ]; then
         OS_VAR=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`
         AUTO="Detected"
@@ -52,10 +58,6 @@ handle_alpine () {
 }
 
 handle_debian () {
-    YARN_INSTALLED="n"
-    NPM_INSTALLED="n"
-    RUBY_INSTALLED="n"
-    JQ_INSTALLED="n"
     set_install
     apt-get update -y && apt install jq ruby -y
     check_lock
