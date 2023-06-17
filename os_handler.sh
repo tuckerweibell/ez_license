@@ -91,6 +91,6 @@ clean_up () {
         if [ $JQ_INSTALLED == "y" ]; then apt remove jq -y; fi
         if [ $RUBY_INSTALLED == "y" ]; then apt remove ruby -y; fi
         if [ $NPM_INSTALLED == "y" ]; then apt remove npm -y; fi
-        if [ $YARN_INSTALLED == "y" ]; then apk remove yarn -y; fi
+        if [ $YARN_INSTALLED == "y" ]; then apt remove yarn -y; fi
     fi
 }
