@@ -52,6 +52,10 @@ handle_alpine () {
 }
 
 handle_debian () {
+    YARN_INSTALLED="n"
+    NPM_INSTALLED="n"
+    RUBY_INSTALLED="n"
+    JQ_INSTALLED="n"
     set_install
     apt-get update -y && apt install jq ruby -y
     check_lock
@@ -82,7 +86,6 @@ set_install () {
 
 check_lock () {
     if [ $NPM == "n" ]; then
-        NPM_INSTALLED="n"
         ls 'package-lock.json' &>/dev/null; 
         if [ $? -eq 0 ]; then NPM_INSTALL="y" && echo "npm will be installed."; return 0; else NPM_INSTALL="n"; fi
         ls 'package.json' &>/dev/null;
@@ -92,7 +95,6 @@ check_lock () {
     fi
 
     if [ $YARN == "n" ]; then
-        YARN_INSTALLED="n"
         ls 'yarn.lock' &>/dev/null; 
         if [ $? -eq 0 ]; then YARN_INSTALL="y" && echo "yarn will be installed."; return 0; else YARN_INSTALL="n"; fi
     fi
