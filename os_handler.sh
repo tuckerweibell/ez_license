@@ -73,7 +73,7 @@ set_install () {
 }
 
 check_lock () {
-    if [ $NPM == "n" ] then;
+    if [ $NPM == "n" ]; then
         ls 'package-lock.json' &>/dev/null; 
         if [ $? -eq 0 ]; then NPM_INSTALL="y" && echo "npm will be installed."; return 0; else NPM_INSTALL="n"; fi
         ls 'package.json' &>/dev/null;
@@ -82,7 +82,7 @@ check_lock () {
         if [ $? -eq 0 ]; then NPM_INSTALL="y" && echo "npm will be installed."; return 0; else NPM_INSTALL="n"; fi
     fi
 
-    if [ $YARN == "n" ] then;
+    if [ $YARN == "n" ]; then
         ls 'yarn.lock' &>/dev/null; 
         if [ $? -eq 0 ]; then YARN_INSTALL="y" && echo "yarn will be installed."; return 0; else YARN_INSTALL="n"; fi
 }
