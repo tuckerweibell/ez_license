@@ -26,7 +26,7 @@ printf '\n'
 
 # Handle "Yarn" Dependencies. This will only run if -y flag set. 
 # Npm handler will normally catch 99% of these.
-if [ -z $YARN_ENABLED ] then
+if [ -z $YARN_ENABLED ]; then
     start_spinner "Processing yarn package dependencies..."
     handle_yarn_deps
     stop_spinner 0
