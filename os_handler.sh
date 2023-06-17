@@ -43,16 +43,24 @@ handle_alpine () {
     set_install
     apk update && apk add jq ruby
     check_lock
-    if [ $NPM_INSTALL == "y" ]; then apk add npm; NPM_INSTALLED="y"; NPM="y"; else NPM_INSTALLED="n"; fi
-    if [ $YARN_INSTALL == "y" ]; then apk add yarn; YARN_INSTALLED="y" YARN="y"; else YARN_INSTALLED="n"; fi
+    if ! [ -z $NPM_INSTALL ]; then
+        if [ $NPM_INSTALL == "y" ]; then apk add npm; NPM_INSTALLED="y"; NPM="y"; else NPM_INSTALLED="n"; fi
+    fi
+    if ! [ -z $YARN_INSTALL ]; then
+        if [ $YARN_INSTALL == "y" ]; then apk add yarn; YARN_INSTALLED="y" YARN="y"; else YARN_INSTALLED="n"; fi
+    fi
 }
 
 handle_debian () {
     set_install
     apt-get update -y && apt install jq ruby -y
     check_lock
-    if [ $NPM_INSTALL == "y" ]; then apt install npm -y; NPM_INSTALLED="y"; NPM="y"; else NPM_INSTALLED="n"; fi
-    if [ $YARN_INSTALL == "y" ]; then apt install yarn -y; YARN_INSTALLED="y"; YARN="y"; else YARN_INSTALLED="n"; fi
+    if ! [ -z $NPM_INSTALL ]; then
+        if [ $NPM_INSTALL == "y" ]; then apt install npm -y; NPM_INSTALLED="y"; NPM="y"; else NPM_INSTALLED="n"; fi
+    fi
+    if ! [ -z $YARN_INSTALL ]; then
+        if [ $YARN_INSTALL == "y" ]; then apt install yarn -y; YARN_INSTALLED="y"; YARN="y"; else YARN_INSTALLED="n"; fi
+    fi
 }
 
 success_msg () {
