@@ -85,6 +85,7 @@ check_lock () {
     if [ $YARN == "n" ]; then
         ls 'yarn.lock' &>/dev/null; 
         if [ $? -eq 0 ]; then YARN_INSTALL="y" && echo "yarn will be installed."; return 0; else YARN_INSTALL="n"; fi
+    fi
 }
 
 clean_up () {
