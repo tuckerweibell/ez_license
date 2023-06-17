@@ -2,7 +2,7 @@
 #!/bin/bash
 
 usage() {
-  printf '\n'; echo "Usage: $0 [ -n APP_NAME (anything) ] [ -o OS_VAR (alpine or debian) ] [ -d OUTPUT_DIR ]" 1>&2; printf '\n';
+  printf '\n'; echo "Usage: $0 [ -n APP_NAME (anything) ] [ -o OS_VAR (alpine or debian) ] [ -d OUTPUT_DIR ] [ -y (enable yarn)]" 1>&2; printf '\n';
 }
 
 exit_abnormal() {
@@ -10,7 +10,7 @@ exit_abnormal() {
   exit 1
 }
 
-while getopts "n:o:d:" opt; do
+while getopts "n:o:d:y" opt; do
     case $opt in
         n)
             APP_NAME=${OPTARG}
@@ -21,6 +21,9 @@ while getopts "n:o:d:" opt; do
             ;;
         d)
             OUTPUT_DIR=${OPTARG}
+            ;;
+        y)  
+            YARN_ENABLED="y"
             ;;
         ?)
             exit_abnormal
