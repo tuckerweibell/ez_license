@@ -42,8 +42,8 @@ add_yarn_check () {
 
 install_debian_tools () {
     apt-get update -y
-    if [ $RUBY == "n" ]; then apt install ruby -y; printf '\n'; echo "ruby will be installed"; printf '\n'; RUBY_INSTALLED="y"; fi
-    if [ $JQ == "n" ]; then apt install jq -y; printf '\n'; echo "jq will be installed"; printf '\n'; JQ_INSTALLED="y"; fi
+    if [ $RUBY == "n" ]; then printf '\n'; echo "ruby will be installed"; printf '\n'; apt install ruby -y; RUBY_INSTALLED="y"; fi
+    if [ $JQ == "n" ]; then printf '\n'; echo "jq will be installed"; printf '\n'; apt install jq -y; JQ_INSTALLED="y"; fi
     add_npm_check
     add_yarn_check
     if ! [ -z $NPM_INSTALL ]; then if [ $NPM_INSTALL == "y" ]; then apt install npm -y; NPM_INSTALLED="y"; NPM="y"; else NPM_INSTALLED="n"; fi; fi
