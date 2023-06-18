@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. 'tools.sh'
+. 'ez_license/tools.sh'
 
 auto_detect_os () {
     AUTO="Trying"
