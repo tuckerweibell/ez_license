@@ -7,10 +7,10 @@ auto_detect_os () {
     if [ -z $OS_VAR ]; then OS_VAR=`cat /etc/os-release | grep -w ID | cut -d "=" -f2`; AUTO="Detected"; fi
     if [ $OS_VAR == "alpine" ]; then 
         echo "$AUTO $OS_VAR operating system."; printf '\n'
-        if handle_alpine; then success_msg; else handle_fail; fi
+        if install_alpine_tools; then success_msg; else handle_fail; fi
     elif [ $OS_VAR == "debian" ]; then
         echo "$AUTO $OS_VAR operating system."; printf '\n'
-        if handle_debian; then success_msg; else handle_fail; fi
+        if install_debian_tools; then success_msg; else handle_fail; fi
     else 
         echo 'OS auto-detection unsuccessful. Switching to manual input.'; printf '\n'
         handle_os_input

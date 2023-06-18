@@ -13,7 +13,7 @@ welcome
 set_vars
 
 # Checking Package Managers
-check
+check_tools
 
 # Attempt to detect OS. Prompt if unsuccessful.
 auto_detect_os
