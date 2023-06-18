@@ -8,9 +8,9 @@ License File:
 _______________________
 '
     EXT="_license.csv"
-    mv licenses.csv $APP_NAME$EXT
     LINES=`licenses.csv | wc -l`
     COUNT=$(($LINES-1))
+    mv licenses.csv $APP_NAME$EXT
 
     # Check if output dir specified.
     if [ -z $OUTPUT_DIR ]; then
