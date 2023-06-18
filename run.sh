@@ -9,8 +9,11 @@ rm ez_license/dependencies/*.json &>/dev/null
 # Display welcome message
 welcome
 
+# Set defaul tool install vars
+set_vars
+
 # Checking Package Managers
-check_pkg_managers
+check_tools
 
 # Attempt to detect OS. Prompt if unsuccessful.
 auto_detect_os
@@ -52,7 +55,7 @@ echo "Success!"
 printf '\n'
 
 # Uninstall packages installed for this program to run
-clean_up
+clean
 
 # Generate output message
 output_msg

@@ -8,6 +8,8 @@ License File:
 _______________________
 '
     EXT="_license.csv"
+    LINES=`cat licenses.csv | wc -l`
+    COUNT=$(($LINES-1))
     mv licenses.csv $APP_NAME$EXT
 
     # Check if output dir specified.
@@ -20,7 +22,11 @@ _______________________
         echo "$APP_NAME$EXT added to $PWD/$OUTPUT_DIR"
     fi
 
-    printf '\n'; echo "Complete!";
+echo '
+Results:
+_______________________
+'
+    echo "$COUNT licenses found."
 
     printf '\n'
     echo '
