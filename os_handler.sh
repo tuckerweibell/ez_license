@@ -31,9 +31,9 @@ handle_os_input () {
 }
 
 success_msg () {
-    printf '\n'; echo "Packages installed successfully."
+    echo "Packages installed successfully."
 }
 
 handle_fail () {
-    printf '\n'; echo "Packages failed to install. Please manually install npm, jq, and yarn or try different operating system."; exit
+    echo "Packages failed to install. Please manually install npm, jq, and yarn or try different operating system."; exit
 }
