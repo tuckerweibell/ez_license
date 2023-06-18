@@ -8,7 +8,7 @@ License File:
 _______________________
 '
     EXT="_license.csv"
-    LINES=`licenses.csv | wc -l`
+    LINES=`cat licenses.csv | wc -l`
     COUNT=$(($LINES-1))
     mv licenses.csv $APP_NAME$EXT
 
