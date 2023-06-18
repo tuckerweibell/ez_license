@@ -11,7 +11,7 @@ welcome () {
            |______|/_____|      |______||_____|\_____||______||_| \_||_____/ |______| 
 
           ----------------------------------------------------------------------------
-          Ez License Scanner - Bundle, Yarn, Npm, Pip - Runs on Linux Operating Systems 
+          Ez License Scanner - Gem, Yarn, Npm, Pip - Runs on Linux Operating Systems 
           ----------------------------------------------------------------------------
         '
     printf '\n\n'
