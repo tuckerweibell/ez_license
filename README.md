@@ -39,7 +39,7 @@ Execute the bash script
 ### Flag Options
 
 - ```-n```: The name of your app. This will be used to generate the output CSV file. i.e If you specify ```-n MY-APP``` then the generated output file will be MY-APP_licenses.csv
-- ```-o```: The OS type. As of now this only supports either ```-o alpine``` or ```-o debian```. This is optional as in the event the OS Engine cannot auto-detect your OS you will also be prompted to choose either debian or alpine.
+- ```-o```: The OS type. Best to leave this flag off and let auto detection do its work. As of now this only supports either ```-o alpine``` or ```-o debian```. This is optional as in the event the OS Engine cannot auto detect your OS you will also be prompted to choose either debian or alpine.
 - ```-d```: The ouput directory. This is the output directory where the CSV file will be generated. If no output directory is specified the CSV file will be generated in your working directory.
 - ```-y```: This enables yarn scanning in addition to npm scanning if available. 99.9% of the time there is no reason to enable this as npm scanning will detect the licenses and packages that yarn scanning would. However, if you wish to have assurance you can use the -y flag. **NOTE:** You will have to remove all duplicates from the CSV file if you choose to enable this option.
 
@@ -49,6 +49,6 @@ Execute the bash script
 
 ### Example Command
 
-```./run.sh -o alpine -d results -n my-rails-app```
+```./run.sh -d results -n my-rails-app```
 
 
