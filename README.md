@@ -1,4 +1,6 @@
-# EZ LICENSE
+# EZ LICENSE :closed_lock_with_key:
+#### License Management & Compliance            
+<br>
 
 ### NOTE 
 This application is a plain old bash and ruby script combination. It will not handle every scenerio you are likely to encounter. However, the principles found in the scripts that utilize ```gem``` , ```npm```, ```yarn```, and ```pip``` in order to grab license information can be applied in various ways. Feel free to clone the repo and make improvements as you wish or customize the code to serve applicable functions for your use case.
