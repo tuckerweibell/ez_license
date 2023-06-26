@@ -1,0 +1,13 @@
+on:
+  pull_request
+  
+jobs:
+  label_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          BRO: ${{ secrets.BRO }}
+        run:
+          echo $BRO
+        
+        
